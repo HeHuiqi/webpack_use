@@ -26,6 +26,9 @@ webpack runoob1.js -o bundle.js
 #webpack runoob1.js 不指定输出文件
 #webpack runoob1.js
 
+# webpack非全局安装的情况这样使用
+node_modules/.bin/webpack runoob1.js -o bundle.js
+
 ```
 ### 通过配置文件来打包
 * 要创建一个名为webpack.config.js的文件
@@ -46,7 +49,7 @@ webpack --progress --colors --watch
 ### 开启一个服务来访问页面
 ```
 #全局安装，用于命令执行
-sudo npm install webpack-dev-server 
+sudo npm install webpack-dev-server -g 
 #用于项目开发依赖
 npm install webpack-dev-server --save-dev
 #开启服务，这会在8080端口开启一个服务，默认读取webpack.config.js文件配置
@@ -54,6 +57,9 @@ npm install webpack-dev-server --save-dev
 #服务开启后，文件有变动会自动重新编译并刷新页面
 #但这并不会自动生成打包文件，要生存打包文件仍需要执行打包命令
 webpack-dev-server --progress --colors
+
+#webpack-dev-server非全局安装的情况这样使用
+node_modules/.bin/webpack-dev-server --progress --colors
 
 ```
 浏览器打开 http://localhost:8080/ 即可看到页面
